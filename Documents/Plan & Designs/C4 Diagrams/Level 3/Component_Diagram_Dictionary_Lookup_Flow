@@ -1,0 +1,250 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36">
+  <diagram name="Page-1" id="pVNd_YSGU_AnC8D4NgMH">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object placeholders="1" c4Name="English Learning Platform" c4Type="SystemScopeBoundary" c4Application="Software System" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="ABfkCmtqyscwQlnI94Lg-1">
+          <mxCell parent="1" style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="1280" width="1490" x="-1600" y="-880" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Web App" c4Type="Container" c4Technology="JavaScript, ReactJS" c4Description="Provides UI for users to lookup for words." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ABfkCmtqyscwQlnI94Lg-2">
+          <mxCell parent="1" style="shape=mxgraph.c4.webBrowserContainer2;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;strokeColor=#118ACD;fillColor=#23A2D9;strokeColor=#118ACD;strokeColor2=#0E7DAD;fontSize=12;fontColor=#ffffff;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1">
+            <mxGeometry height="160" width="240" x="-690" y="-860" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-3" parent="1" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;whiteSpace=wrap;" value="Controllers" vertex="1">
+          <mxGeometry height="150" width="250" x="-1100" y="-620" as="geometry" />
+        </mxCell>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-4" parent="ABfkCmtqyscwQlnI94Lg-3" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;whiteSpace=wrap;" value="" vertex="1">
+          <mxGeometry height="104.99999999999999" relative="1" width="250" as="geometry">
+            <mxPoint y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-5" parent="ABfkCmtqyscwQlnI94Lg-3" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" value="&lt;b&gt;DictionaryController&lt;/b&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[Component: Spring REST Controller]&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Authorizes and routes requests for words data.&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80.01" width="210" x="20" y="50" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Backend" c4Type="ContainerScopeBoundary" c4Application="Container" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="ABfkCmtqyscwQlnI94Lg-6">
+          <mxCell parent="1" style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="800" width="1140" x="-1560" y="-650" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-7" parent="1" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;whiteSpace=wrap;" value="Services" vertex="1">
+          <mxGeometry height="160" width="270" x="-1110" y="-370" as="geometry" />
+        </mxCell>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-8" parent="ABfkCmtqyscwQlnI94Lg-7" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;whiteSpace=wrap;" value="" vertex="1">
+          <mxGeometry height="112" relative="1" width="270.00000000000006" as="geometry">
+            <mxPoint y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-9" parent="ABfkCmtqyscwQlnI94Lg-7" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" value="&lt;b&gt;DictionaryService&lt;/b&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[Component: Spring Service]&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Handle words data searching request.&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92.22" width="222.06" x="23.97" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-25" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;aspect=fixed;fillColor=none;strokeColor=none;resizable=0;perimeter=centerPerimeter;rotatable=0;allowArrows=0;points=[];outlineConnect=1;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="-870" y="-390" as="geometry" />
+        </mxCell>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-26" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;aspect=fixed;fillColor=none;strokeColor=none;resizable=0;perimeter=centerPerimeter;rotatable=0;allowArrows=0;points=[];outlineConnect=1;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="-870" y="-154" as="geometry" />
+        </mxCell>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-27" parent="1" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;whiteSpace=wrap;" value="Security" vertex="1">
+          <mxGeometry height="170" width="220" x="-680" y="-620" as="geometry" />
+        </mxCell>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-28" parent="ABfkCmtqyscwQlnI94Lg-27" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;whiteSpace=wrap;" value="" vertex="1">
+          <mxGeometry height="118.99999999999999" relative="1" width="220" as="geometry">
+            <mxPoint y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-29" parent="ABfkCmtqyscwQlnI94Lg-27" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" value="&lt;b&gt;JwtAuthenticationFilter&lt;/b&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[Component: Spring Security Component]&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Intercepts incoming requests, validates the JWT signature, and extracts the user&#39;s identity.&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="182.4" x="17.6" y="50" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Type="Relationship" c4Description="Passes authenticated request to" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="ABfkCmtqyscwQlnI94Lg-31">
+          <mxCell edge="1" parent="1" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;exitX=0.064;exitY=0.603;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;">
+            <mxGeometry relative="1" width="240" x="0.0879" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="-770" y="-510" />
+              </Array>
+              <mxPoint x="-650.7264" y="-509.6999999999998" as="sourcePoint" />
+              <mxPoint x="-870" y="-509.99249999999984" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-36" parent="1" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;whiteSpace=wrap;" value="Infrastructure" vertex="1">
+          <mxGeometry height="160" width="250" x="-700" y="-370" as="geometry" />
+        </mxCell>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-37" parent="ABfkCmtqyscwQlnI94Lg-36" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;whiteSpace=wrap;" value="" vertex="1">
+          <mxGeometry height="148.9230769230769" relative="1" width="250.00000000000003" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ABfkCmtqyscwQlnI94Lg-38" parent="ABfkCmtqyscwQlnI94Lg-36" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" value="&lt;b&gt;DictionaryFetcherClient&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[Component: Spring Component]&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Calling Dictionary Fetcher for searching new words.&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92.22" width="216.65625000000003" x="10.416666666666668" y="47.89" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Cache" c4Type="Container" c4Technology="Redis" c4Description="Caches active data to reduce database load." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="M-j2raFg3UY0kZWmbYAy-1">
+          <mxCell parent="1" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1">
+            <mxGeometry height="120" width="240" x="-1500" y="200" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Database" c4Type="Container" c4Technology="PostgreSQL" c4Description="Stores relational data: users, classrooms, tests, questions, etc." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="M-j2raFg3UY0kZWmbYAy-2">
+          <mxCell parent="1" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1">
+            <mxGeometry height="120" width="240" x="-1095" y="200" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Google Translator" c4Type="Software System" c4Description="Provides English-to-Vietnamese translation via Google Apps Script integration." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#FFFFFF&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="M-j2raFg3UY0kZWmbYAy-3">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="240" x="-80" y="-46" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="M-j2raFg3UY0kZWmbYAy-4" parent="1" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;whiteSpace=wrap;" value="Repository" vertex="1">
+          <mxGeometry height="160" width="270" x="-1110" y="-80" as="geometry" />
+        </mxCell>
+        <mxCell id="M-j2raFg3UY0kZWmbYAy-5" parent="M-j2raFg3UY0kZWmbYAy-4" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;whiteSpace=wrap;" value="" vertex="1">
+          <mxGeometry height="112" relative="1" width="270.00000000000006" as="geometry">
+            <mxPoint y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M-j2raFg3UY0kZWmbYAy-6" parent="M-j2raFg3UY0kZWmbYAy-4" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" value="&lt;b&gt;DictionaryRepository&lt;/b&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[Component: Spring Repository]&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Fetch/Save word data from/to local database.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92.22" width="222.06" x="23.97" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="M-j2raFg3UY0kZWmbYAy-11" parent="1" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;whiteSpace=wrap;" value="Utilities" vertex="1">
+          <mxGeometry height="160" width="270" x="-1510" y="-370" as="geometry" />
+        </mxCell>
+        <mxCell id="M-j2raFg3UY0kZWmbYAy-12" parent="M-j2raFg3UY0kZWmbYAy-11" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;whiteSpace=wrap;" value="" vertex="1">
+          <mxGeometry height="112" relative="1" width="270.00000000000006" as="geometry">
+            <mxPoint y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M-j2raFg3UY0kZWmbYAy-13" parent="M-j2raFg3UY0kZWmbYAy-11" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" value="&lt;b&gt;WordMapping&lt;/b&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[Component: Spring Component]&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Extract and mapping needed word data&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92.22" width="222.06" x="23.97" y="50" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Dictionary Fetcher" c4Type="Container" c4Technology="Node.js, Express" c4Description="Internal microservice that fetchs and formats dictionary data." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="M-j2raFg3UY0kZWmbYAy-17">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="240" x="-370" y="-336" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="M-j2raFg3UY0kZWmbYAy-18" parent="1" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;whiteSpace=wrap;" value="Infrastructure" vertex="1">
+          <mxGeometry height="160" width="250" x="-700" y="-80" as="geometry" />
+        </mxCell>
+        <mxCell id="M-j2raFg3UY0kZWmbYAy-19" parent="M-j2raFg3UY0kZWmbYAy-18" style="html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;whiteSpace=wrap;" value="" vertex="1">
+          <mxGeometry height="148.9230769230769" relative="1" width="250.00000000000003" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M-j2raFg3UY0kZWmbYAy-20" parent="M-j2raFg3UY0kZWmbYAy-18" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" value="&lt;b&gt;TranslatorClient&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[Component: Spring Component]&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Calling Google Translator for translating words meaning.&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92.22" width="216.65625000000003" x="10.416666666666668" y="47.89" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Type="Relationship" c4Technology="SQL/JDBC" c4Description="Fetchs word data from" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="M-j2raFg3UY0kZWmbYAy-32">
+          <mxCell edge="1" parent="1" source="M-j2raFg3UY0kZWmbYAy-6" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;entryX=0.268;entryY=0.025;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" target="M-j2raFg3UY0kZWmbYAy-2">
+            <mxGeometry relative="1" width="240" x="-0.3212" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points" />
+              <mxPoint x="-1010" y="170" as="sourcePoint" />
+              <mxPoint x="-985" y="287" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="SQL/JDBC" c4Description="Saves new word &#xa;data to" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="M-j2raFg3UY0kZWmbYAy-33">
+          <mxCell edge="1" parent="1" source="M-j2raFg3UY0kZWmbYAy-6" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;entryX=0.731;entryY=0.029;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" target="M-j2raFg3UY0kZWmbYAy-2">
+            <mxGeometry relative="1" width="240" x="0.2428" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points" />
+              <mxPoint x="-830" y="100" as="sourcePoint" />
+              <mxPoint x="-860" y="215" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS/JSON" c4Description="Sends word via" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="M-j2raFg3UY0kZWmbYAy-47">
+          <mxCell edge="1" parent="1" source="ABfkCmtqyscwQlnI94Lg-36" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;exitX=0;exitY=0;exitDx=250;exitDy=95;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="M-j2raFg3UY0kZWmbYAy-17">
+            <mxGeometry relative="1" width="240" x="-0.0048" y="-15" as="geometry">
+              <mxPoint y="1" as="offset" />
+              <mxPoint x="-220" y="-120" as="sourcePoint" />
+              <mxPoint x="-40" y="-120" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS/JSON" c4Description="Sends text via" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="M-j2raFg3UY0kZWmbYAy-48">
+          <mxCell edge="1" parent="1" source="M-j2raFg3UY0kZWmbYAy-20" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="M-j2raFg3UY0kZWmbYAy-3">
+            <mxGeometry relative="1" width="240" x="-0.0048" y="-15" as="geometry">
+              <mxPoint y="1" as="offset" />
+              <mxPoint x="-330" y="71" as="sourcePoint" />
+              <mxPoint x="-250" y="70" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS/REST" c4Description="Request for word data" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="XKOdB_JLfAC3plx2zYSW-1">
+          <mxCell edge="1" parent="1" source="ABfkCmtqyscwQlnI94Lg-2" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" target="ABfkCmtqyscwQlnI94Lg-29">
+            <mxGeometry relative="1" width="240" x="-0.2255" y="-1" as="geometry">
+              <mxPoint as="offset" />
+              <mxPoint x="-463" y="-620.67" as="sourcePoint" />
+              <mxPoint x="-70" y="-620.67" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Delegates word data request to" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="XKOdB_JLfAC3plx2zYSW-3">
+          <mxCell edge="1" parent="1" source="ABfkCmtqyscwQlnI94Lg-5" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ABfkCmtqyscwQlnI94Lg-9">
+            <mxGeometry relative="1" width="240" x="-0.1765" as="geometry">
+              <mxPoint as="offset" />
+              <mxPoint x="-640.7264" y="-499.6999999999998" as="sourcePoint" />
+              <mxPoint x="-860" y="-499.99249999999984" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Map word data json &#xa;to dto using" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="XKOdB_JLfAC3plx2zYSW-4">
+          <mxCell edge="1" parent="1" source="ABfkCmtqyscwQlnI94Lg-9" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;exitX=0;exitY=0.5;exitDx=10;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" target="M-j2raFg3UY0kZWmbYAy-13">
+            <mxGeometry relative="1" width="240" y="-6" as="geometry">
+              <mxPoint as="offset" />
+              <mxPoint x="-965" y="-480" as="sourcePoint" />
+              <mxPoint x="-965" y="-310" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Request for word data using" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="XKOdB_JLfAC3plx2zYSW-6">
+          <mxCell edge="1" parent="1" source="ABfkCmtqyscwQlnI94Lg-9" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=10;entryDy=0;entryPerimeter=0;" target="ABfkCmtqyscwQlnI94Lg-38">
+            <mxGeometry relative="1" width="240" x="-0.0886" y="5" as="geometry">
+              <mxPoint as="offset" />
+              <mxPoint x="-965" y="-480" as="sourcePoint" />
+              <mxPoint x="-965" y="-310" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="RESP" c4Description="Check for cached word&#xa;and cache newly searched word" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="XKOdB_JLfAC3plx2zYSW-7">
+          <mxCell edge="1" parent="1" source="ABfkCmtqyscwQlnI94Lg-9" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;exitX=0;exitY=1;exitDx=10;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="M-j2raFg3UY0kZWmbYAy-1">
+            <mxGeometry relative="1" width="240" x="-0.0048" y="-15" as="geometry">
+              <mxPoint y="1" as="offset" />
+              <mxPoint x="-1400" y="-109" as="sourcePoint" />
+              <mxPoint x="-1320" y="-110" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Get word data &#xa;from the database using" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="XKOdB_JLfAC3plx2zYSW-9">
+          <mxCell edge="1" parent="1" source="ABfkCmtqyscwQlnI94Lg-9" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="M-j2raFg3UY0kZWmbYAy-6">
+            <mxGeometry relative="1" width="240" x="-0.3146" as="geometry">
+              <mxPoint as="offset" />
+              <mxPoint x="-1066" y="-264" as="sourcePoint" />
+              <mxPoint x="-1254" y="-264" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Save word data &#xa;to the database using" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="XKOdB_JLfAC3plx2zYSW-10">
+          <mxCell edge="1" parent="1" source="ABfkCmtqyscwQlnI94Lg-9" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="M-j2raFg3UY0kZWmbYAy-6">
+            <mxGeometry relative="1" width="240" x="0.0912" as="geometry">
+              <mxPoint as="offset" />
+              <mxPoint x="-1021" y="-218" as="sourcePoint" />
+              <mxPoint x="-1021" y="-20" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Translate word&#39;s meaning using" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="XKOdB_JLfAC3plx2zYSW-11">
+          <mxCell edge="1" parent="1" source="ABfkCmtqyscwQlnI94Lg-9" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=10;entryDy=0;entryPerimeter=0;" target="M-j2raFg3UY0kZWmbYAy-20">
+            <mxGeometry relative="1" width="240" x="0.0912" as="geometry">
+              <mxPoint as="offset" />
+              <mxPoint x="-909" y="-218" as="sourcePoint" />
+              <mxPoint x="-909" y="-20" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
