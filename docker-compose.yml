@@ -57,19 +57,19 @@ services:
       minio:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
       SERVER_PORT: 8080
       
-      SPRING_DATA_REDIS_HOST: redis
-      SPRING_DATA_REDIS_PORT: 6379
+      SPRING_DATA_REDIS_HOST: ${REDIS_HOST}
+      SPRING_DATA_REDIS_PORT: ${REDIS_PORT}
       
-      S3_ENDPOINT: http://minio:9000 # For development ONLY
+      S3_ENDPOINT: ${http://minio:9000}
       S3_ACCESS_KEY: ${S3_ACCESS_KEY}
       S3_SECRET_KEY: ${S3_SECRET_KEY}
-      S3_REGION: us-east-1 # For development ONLY
-      S3_BUCKET: laurenenglish-assets
+      S3_REGION: ${S3_REGION} 
+      S3_BUCKET: ${laurenenglish-assets}
     networks:
       - backend-network
       
