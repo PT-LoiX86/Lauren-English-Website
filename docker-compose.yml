@@ -5,7 +5,7 @@ networks:
 services:
   postgres:
     image: postgres:18
-    container_name: laurenglish-postgres-db
+    container_name: laurenenglish-postgres-db
     restart: unless-stopped
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
@@ -28,7 +28,7 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4:9
-    container_name: laurenglish-pgadmin	
+    container_name: laurenenglish-pgadmin	
     restart: unless-stopped
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
@@ -42,6 +42,34 @@ services:
       - postgres
     networks:
       - backend-network
+
+  backend:
+    image: ptloi86/laurenenglish-backend:latest
+    container_name: laurenenglish-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      SERVER_PORT: 8080
+    networks:
+      - backend-network
+      
+  frontend:
+    image: ptloi86/laurenenglish-frontend:latest
+    container_name: laurenenglish-frontend
+    ports:
+      - "3000:80"
+    networks:
+      - backend-network
+    depends_on:
+      - backend
+    restart: unless-stopped
     
 volumes:
   postgres_data:

@@ -1,4 +1,27 @@
+# IDE / OS
 .idea/
 .vscode/
+.DS_Store
 
+# ENV
 .env
+.env.local
+.env.*.local
+
+# FRONTEND
+logs
+*.log
+npm-debug.log*
+
+node_modules/
+
+dist/
+dist-ssr/
+
+# BACKEND
+target/
+
+*.iml
+.classpath
+.project
+.settings/
