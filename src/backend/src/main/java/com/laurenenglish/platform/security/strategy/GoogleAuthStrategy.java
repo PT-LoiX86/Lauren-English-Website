@@ -48,7 +48,7 @@ public class GoogleAuthStrategy implements AuthStrategy {
 
     @Override
     public AuthProvider getProviderName() {
-        return AuthProvider.GOOGLE;
+        return AuthProvider.google;
     }
 
     @Override
