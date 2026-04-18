@@ -59,6 +59,7 @@ application:
     oauth2:
       google:
         client-id: ${GOOGLE_CLIENT_ID:clientid12345}
+        client-secret: ${GOOGLE_CLIENT_SECRET:clientsecret12345}
 
   storage:
     s3:

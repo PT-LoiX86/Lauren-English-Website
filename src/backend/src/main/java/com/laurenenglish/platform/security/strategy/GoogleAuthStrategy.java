@@ -1,7 +1,8 @@
 package com.laurenenglish.platform.security.strategy;
 
+import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeTokenRequest;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
-import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
+import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
 import com.laurenenglish.platform.models.dtos.AuthResponse;
@@ -17,7 +18,6 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
 @Component
@@ -25,23 +25,23 @@ public class GoogleAuthStrategy implements AuthStrategy {
 
     private final UserRepository userRepository;
     private final JwtService jwtService;
-    private final GoogleIdTokenVerifier googleVerifier;
     private final StringRedisTemplate redisTemplate;
     private final int refreshTokenExpiryMinutes;
+    private final String googleClientId;
+    private final String googleClientSecret;
 
     public GoogleAuthStrategy(
             UserRepository userRepository,
             JwtService jwtService,
             @Value("${application.security.oauth2.google.client-id}") String googleClientId,
+            @Value("${application.security.oauth2.google.client-secret}") String googleClientSecret,
             StringRedisTemplate redisTemplate,
             @Value("${application.security.jwt.expiration-minute-refresh-token}") int refreshTokenExpiryMinutes
     ) {
         this.userRepository = userRepository;
         this.jwtService = jwtService;
-        // Initialize the Google Verifier with Client ID
-        this.googleVerifier = new GoogleIdTokenVerifier.Builder(new NetHttpTransport(), new GsonFactory())
-                .setAudience(Collections.singletonList(googleClientId))
-                .build();
+        this.googleClientId = googleClientId;
+        this.googleClientSecret = googleClientSecret;
         this.redisTemplate = redisTemplate;
         this.refreshTokenExpiryMinutes = refreshTokenExpiryMinutes;
     }
@@ -54,13 +54,27 @@ public class GoogleAuthStrategy implements AuthStrategy {
     @Override
     @Transactional
     public AuthResponse authenticate(AuthRequest request) {
-        if (request.idToken() == null) {
-            throw new BadCredentialsException("Google ID Token is missing.");
+        if (request.authCode() == null || request.authCode().isEmpty()) {
+            throw new BadCredentialsException("Google Auth Code is missing.");
         }
 
         try {
-            GoogleIdToken idToken = googleVerifier.verify(request.idToken());
-            if (idToken == null) throw new BadCredentialsException("Invalid Google ID Token.");
+            // Exchange the Auth Code for Tokens
+            GoogleTokenResponse tokenResponse = new GoogleAuthorizationCodeTokenRequest(
+                    new NetHttpTransport(),
+                    new GsonFactory(),
+                    "https://oauth2.googleapis.com/token",
+                    googleClientId,
+                    googleClientSecret,
+                    request.authCode(),
+                    "postmessage"
+            ).execute();
+
+            // Parse the securely returned ID Token
+            GoogleIdToken idToken = tokenResponse.parseIdToken();
+            if (idToken == null) {
+                throw new BadCredentialsException("Invalid Google Token Response.");
+            }
 
             GoogleIdToken.Payload payload = idToken.getPayload();
 
@@ -97,7 +111,7 @@ public class GoogleAuthStrategy implements AuthStrategy {
             );
 
         } catch (Exception e) {
-            throw new BadCredentialsException("Google authentication failed: " + e.getMessage());
+            throw new BadCredentialsException("Google authorization code exchange failed: " + e.getMessage());
         }
     }
 }
