@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "echo \"Warning: No tests written yet!\" && exit 0",
+    "test:ci": "echo \"Warning: No tests written yet!\" && exit 0"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.0",
