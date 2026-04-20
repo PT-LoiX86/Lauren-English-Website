@@ -1,3 +1,70 @@
+server:
+  port: 8080
+
 spring:
   application:
-    name: platform
+    name: lauren-english-backend
+
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:lauren-english}
+    username: ${POSTGRES_USER:root}
+    password: ${POSTGRES_PASSWORD:root}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 1
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
+  web:
+    error:
+      include-message: always
+
+  ai:
+    google:
+      genai:
+        api-key: ${GEMINI_API_KEY}
+
+        chat:
+          options:
+            model: gemini-2.5-flash
+
+application:
+  backend:
+    base-url: http://localhost:8080
+  frontend:
+    base-url: http://localhost:3000
+
+  security:
+    jwt:
+      secret-key: ${JWT_SECRET_KEY:a21b0e22403c8c2094852cf30c21bf5d3d571fa70863cc9e74b8e1a610b54775}
+      issuer: ${application.backend.base-url}
+      expiration-minute-access-token: 15
+      expiration-minute-refresh-token: 10080
+
+    oauth2:
+      google:
+        client-id: ${GOOGLE_CLIENT_ID:clientid12345}
+        client-secret: ${GOOGLE_CLIENT_SECRET:clientsecret12345}
+
+  storage:
+    s3:
+      endpoint: ${S3_ENDPOINT:http://minio:9000}
+      access-key: ${S3_ACCESS_KEY:root}
+      secret-key: ${S3_SECRET_KEY:root}
+      region: ${S3_REGION:vn}
+      bucket: ${S3_BUCKET:laurenenglish-assets}
