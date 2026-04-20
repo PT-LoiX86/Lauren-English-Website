@@ -40,7 +40,7 @@ export const useAuthStore = create<AuthState>()(
         }),
 
       updateTokens: (accessToken, refreshToken) =>
-        set((state) => ({
+        set(() => ({
           accessToken,
           refreshToken,
         })),

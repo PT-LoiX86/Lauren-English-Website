@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGoogleLogin, type CodeResponse } from "@react-oauth/google";
-import { Button } from "@/components/ui/button"; // Added Shadcn Button
+import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle } from "lucide-react";
 import { apiClient } from "../api/Client";
 import { useAuthStore, type UserProfile } from "../stores/AuthStore";
+import axios from "axios";
 
 import pageBackground from "../assets/backgrounds/background.png";
 import poster from "../assets/posters/poster2.png";
@@ -43,14 +44,12 @@ export const LoginPage = () => {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // 1. THE ENTERPRISE FLOW: We use the hook with flow: 'auth_code'
   const loginWithGoogle = useGoogleLogin({
     flow: "auth-code",
     onSuccess: async (codeResponse: CodeResponse) => {
       setIsLoading(true);
       setError(null);
       try {
-        // 2. We send the Authorization Code to Spring Boot, NOT the ID Token
         const response = await apiClient.post("/auth/google", {
           authCode: codeResponse.code,
         });
@@ -67,12 +66,19 @@ export const LoginPage = () => {
 
         login(data.accessToken, data.refreshToken, userProfile);
         navigate("/dashboard");
-      } catch (err: any) {
+      } catch (err) {
         console.error("Login failed:", err);
-        setError(
-          err.response?.data?.message ||
-            "Authentication failed. Please try again.",
-        );
+
+        if (axios.isAxiosError(err)) {
+          setError(
+            err.response?.data?.message ||
+              "Authentication failed. Please try again.",
+          );
+        } else if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unexpected error occurred. Please try again.");
+        }
       } finally {
         setIsLoading(false);
       }
@@ -130,7 +136,6 @@ export const LoginPage = () => {
             {/* Google Authentication Button Area */}
             <div className="flex flex-col gap-4 pt-4">
               <div className="flex justify-center w-full">
-                {/* 3. THE CUSTOM SHADCN BUTTON */}
                 <Button
                   onClick={() => loginWithGoogle()}
                   variant="outline"

@@ -35,7 +35,7 @@ apiClient.interceptors.response.use(
       originalRequest._retry = true;
       try {
         // 1. Grab updateTokens
-        const { refreshToken, updateTokens, logout } = useAuthStore.getState();
+        const { refreshToken, updateTokens } = useAuthStore.getState();
 
         if (!refreshToken) {
           throw new Error("No refresh token available");
