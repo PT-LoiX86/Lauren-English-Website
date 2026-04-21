@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { apiClient } from "../api/Client";
 
 // Define the TypeScript interfaces based on the Java API contract
 export interface UserProfile {
@@ -16,16 +17,15 @@ interface AuthState {
   user: UserProfile | null;
   isAuthenticated: boolean;
 
-  // Actions
   login: (accessToken: string, refreshToken: string, user: UserProfile) => void;
   updateTokens: (accessToken: string, refreshToken: string) => void;
-  logout: () => void;
+  logout: () => Promise<void>;
 }
 
 // Create the Zustand Store
 export const useAuthStore = create<AuthState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       accessToken: null,
       refreshToken: null,
       user: null,
@@ -45,12 +45,26 @@ export const useAuthStore = create<AuthState>()(
           refreshToken,
         })),
 
-      logout: () =>
-        set({
+      logout: async () => {
+        const { refreshToken } = get();
+
+        if (refreshToken) {
+          try {
+            await apiClient.post("/auth/logout", {
+              refreshToken: refreshToken,
+            });
+          } catch (error) {
+            console.error("Server-side logout failed:", error);
+          }
+        }
+
+        set(() => ({
           accessToken: null,
+          refreshToken: null,
           user: null,
           isAuthenticated: false,
-        }),
+        }));
+      },
     }),
     {
       name: "lauren-english-auth", // The key used in localStorage

@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ProtectedRoute } from "./components/layouts/ProtectedRoute";
 import { LoginPage } from "./pages/LoginPage";
+import DashboardLayout from "./pages/layouts/DashboardLayout";
+import DashboardPage from "./pages/DashboardPage";
 
 function App() {
   return (
@@ -11,10 +13,13 @@ function App() {
 
         {/* PROTECTED ROUTES (Wrapped by Gatekeeper) */}
         <Route element={<ProtectedRoute />}>
-          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+          <Route element={<DashboardLayout />}>
+            <Route path="/dashboard" element={<DashboardPage />} />
+          </Route>
+
           {/* <Route path="/classrooms" element={<Classrooms />} /> */}
 
-          {/* Add more protected routes here later (e.g., /tests, /reports) */}
+          {/* Add more protected routes here later */}
         </Route>
 
         {/* CATCH-ALL REDIRECT */}
