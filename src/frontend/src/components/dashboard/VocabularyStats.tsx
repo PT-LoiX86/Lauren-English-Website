@@ -79,7 +79,7 @@ export function VocabularyStats({ stats, isLoading }: Props) {
               axisLine={false}
             />
             <Bar dataKey="words" radius={[4, 4, 0, 0]}>
-              {stats.masteryDistribution.map((entry, index) => (
+              {stats.masteryDistribution.map((_entry, index) => (
                 <Cell
                   key={`cell-${index}`}
                   fill={MASTERY_COLORS[index % MASTERY_COLORS.length]}

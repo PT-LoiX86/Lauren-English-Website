@@ -51,7 +51,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const isTeacher = user?.role === "TEACHER";
   const isAdmin = user?.role === "ADMIN";
 
-  const classroomSubItems = [];
+  const classroomSubItems: { title: string; url: string }[] = [];
 
   if (isTeacher) {
     classroomSubItems.push({
