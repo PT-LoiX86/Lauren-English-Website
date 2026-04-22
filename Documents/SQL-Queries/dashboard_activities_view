@@ -1,0 +1,77 @@
+CREATE OR REPLACE VIEW dashboard_activities AS
+
+-- Student Class Periods
+SELECT 
+    cp.id AS id, 
+    'PERIOD' AS type, 
+    'Class Period' AS title, 
+    c.name AS classroom_name, 
+    c.id AS reference_id, 
+    cp.lesson_content AS description, 
+    cp.start_at AS timestamp, 
+    e.student_id AS user_id
+FROM class_periods cp
+JOIN classrooms c ON cp.classroom_id = c.id
+JOIN enrollments e ON c.id = e.classroom_id
+
+UNION ALL
+
+-- Teacher Class Periods
+SELECT 
+    cp.id AS id, 
+    'PERIOD' AS type, 
+    'Class Period' AS title, 
+    c.name AS classroom_name, 
+    c.id AS reference_id, 
+    cp.lesson_content AS description, 
+    cp.start_at AS timestamp, 
+    c.teacher_id AS user_id
+FROM class_periods cp
+JOIN classrooms c ON cp.classroom_id = c.id
+
+UNION ALL
+
+-- Student Tests (Deadlines)
+SELECT 
+    t.id AS id, 
+    'TEST' AS type, 
+    t.title AS title, 
+    c.name AS classroom_name, 
+    t.id AS reference_id, 
+    t.description AS description, 
+    t.deadline AS timestamp, 
+    e.student_id AS user_id
+FROM tests t
+JOIN classrooms c ON t.classroom_id = c.id
+JOIN enrollments e ON c.id = e.classroom_id
+
+UNION ALL
+
+-- Teacher Tests (Deadlines)
+SELECT 
+    t.id AS id, 
+    'TEST' AS type, 
+    t.title AS title, 
+    c.name AS classroom_name, 
+    t.id AS reference_id, 
+    t.description AS description, 
+    t.deadline AS timestamp, 
+    c.teacher_id AS user_id
+FROM tests t
+JOIN classrooms c ON t.classroom_id = c.id
+
+UNION ALL
+
+-- Vocabulary Reviews (Aggregated by day per user)
+SELECT 
+    CAST(MD5(sw.user_id::text || CAST(sw.next_review_at AS DATE)::text) AS UUID) AS id,
+    'REVIEW' AS type,
+    'Word Review' AS title,
+    NULL AS classroom_name,
+    NULL AS reference_id,
+    COUNT(sw.id) || ' words' AS description,
+    CAST(CAST(sw.next_review_at AS DATE) AS TIMESTAMP) AS timestamp,
+    sw.user_id AS user_id
+FROM saved_words sw
+WHERE sw.next_review_at IS NOT NULL
+GROUP BY sw.user_id, CAST(sw.next_review_at AS DATE);

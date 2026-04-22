@@ -4,14 +4,13 @@ import { useGoogleLogin, type CodeResponse } from "@react-oauth/google";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle } from "lucide-react";
-import { apiClient } from "../api/Client";
-import { useAuthStore, type UserProfile } from "../stores/AuthStore";
+import { apiClient } from "@/api/Client";
+import { useAuthStore, type UserProfile } from "@/stores/AuthStore";
 import axios from "axios";
 
-import pageBackground from "../assets/backgrounds/background.png";
-import poster from "../assets/posters/poster2.png";
+import pageBackground from "@/assets/backgrounds/background.png";
+import poster from "@/assets/posters/poster2.png";
 
-// The clean Google "G" logo SVG for our custom button
 const GoogleIcon = () => (
   <svg
     className="w-5 h-5 mr-3"
@@ -133,7 +132,7 @@ export const LoginPage = () => {
               </Alert>
             )}
 
-            {/* Google Authentication Button Area */}
+            {/* Google Authentication Button */}
             <div className="flex flex-col gap-4 pt-4">
               <div className="flex justify-center w-full">
                 <Button

@@ -9,7 +9,7 @@ export default {
           DEFAULT: "#2d58a1", // Primary
           foreground: "#f4f3f4", // Off-white for text on primary background
         },
-        background: "#f4f3f4", // Main app background
+        background: "#ffffff", // Main app background
 
         // Secondary & Accent colors
         secondary: "#6682b5",
