@@ -74,7 +74,7 @@ public class AuthServiceImpl implements AuthService {
             String newAccessToken = jwtService.generateAuthenticationToken(user);
             String newRefreshToken = jwtService.generateRefreshToken(user);
 
-            redisTemplate.delete(redisKey); // Invalidate the old token in redis
+            redisTemplate.delete(redisKey);
 
             redisTemplate.opsForValue().set(
                     "rt:" + newRefreshToken,

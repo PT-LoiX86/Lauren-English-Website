@@ -10,23 +10,27 @@ export interface ActivityDTO {
   timestamp: Date;
 }
 
-export interface NextPeriodDTO {
+export interface ClassPeriodDTO {
   id: string;
   classroomName: string;
-  periodNumber: number;
   lessonContent: string;
   startTime: Date;
 }
 
-export interface VocabularyStatsDTO {
+export interface WordMasteryCountDTO {
+  level: string;
+  words: number;
+}
+
+export interface VocabularyProgressDTO {
   learnedWords: number;
   totalSavedWords: number;
-  masteryDistribution: { level: string; words: number }[];
+  masteryDistribution: WordMasteryCountDTO[];
   nextReviewWordCount: number;
   nextReviewTime: Date;
 }
 
-export interface AIReviewDTO {
+export interface TestFeedbackDTO {
   testTitle: string;
   strengths: string[];
   weaknesses: string[];

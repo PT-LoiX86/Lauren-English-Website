@@ -1,4 +1,3 @@
-// src/components/dashboard/ActivityCard.tsx
 import { BookOpen, Brain, Clock } from "lucide-react";
 import { format } from "date-fns";
 import type { ActivityDTO } from "@/types/dashboard-dto";
@@ -49,7 +48,6 @@ export function ActivityCard({ activity }: { activity: ActivityDTO }) {
 
         {activity.classroomName && (
           <p className="text-xs text-gray-500 truncate mt-0.5">
-            Of classroom:{" "}
             <span className="font-medium text-gray-700">
               {activity.classroomName}
             </span>

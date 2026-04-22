@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useQuery } from "@tanstack/react-query";
 import {
   School,
   LayoutDashboard,
@@ -11,6 +12,7 @@ import {
 import { NavMain } from "@/components/sidebar/nav-main";
 import { NavUser } from "@/components/sidebar/nav-user";
 import { useAuthStore } from "@/stores/AuthStore";
+import { apiClient } from "@/api/Client";
 import {
   Sidebar,
   SidebarContent,
@@ -22,11 +24,29 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 
+interface ClassroomDTO {
+  id: string;
+  name: string;
+  status: string;
+  teacherName: string;
+}
+
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { user } = useAuthStore();
 
-  // TEMPORARY MOCK DATA (will replaced with an API call later)
-  const mockClassrooms = [];
+  const { data: classrooms = [], isLoading } = useQuery({
+    queryKey: ["classrooms", user?.userId],
+
+    queryFn: async () => {
+      const response = await apiClient.get<ClassroomDTO[]>("/classrooms");
+      return response.data;
+    },
+
+    enabled: !!user,
+
+    // Optional: Keep the data fresh for 5 minutes
+    staleTime: 1000 * 60 * 5,
+  });
 
   const isTeacher = user?.role === "TEACHER";
   const isAdmin = user?.role === "ADMIN";
@@ -40,8 +60,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     });
   }
 
-  if (mockClassrooms.length > 0) {
-    mockClassrooms.forEach((classroom) => {
+  if (isLoading) {
+    classroomSubItems.push({ title: "Loading...", url: "#" });
+  } else if (classrooms.length > 0) {
+    classrooms.forEach((classroom) => {
       classroomSubItems.push({
         title: classroom.name,
         url: `/classrooms/${classroom.id}`,
@@ -71,7 +93,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       },
     ];
 
-    // Role-based additions: Only push these if the user has the correct role
     if (isTeacher || isAdmin) {
       nav.push({
         title: "Question Bank",

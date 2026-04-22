@@ -1,14 +1,27 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import type { AIReviewDTO } from "@/types/dashboard-dto";
+import type { TestFeedbackDTO } from "@/types/dashboard-dto";
 import { CheckCircle2, AlertCircle, Lightbulb } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 
-export function AIReviewCard({ review }: { review: AIReviewDTO | null }) {
+interface Props {
+  review?: TestFeedbackDTO;
+  isLoading?: boolean;
+}
+
+export function AIReviewCard({ review, isLoading }: Props) {
+  if (isLoading) {
+    return <Skeleton className="h-[280px] w-full rounded-xl shadow-sm" />;
+  }
+
   if (!review) {
     return (
-      <Card className="shadow-sm bg-gray-50/50">
+      <Card className="shadow-sm bg-gray-50/50 min-h-[280px] flex flex-col justify-center items-center">
         <CardContent className="p-8 text-center text-gray-500">
           <Lightbulb className="h-8 w-8 mx-auto mb-3 text-gray-400" />
-          <p>Complete your first test to unlock AI-powered insights!</p>
+          <h3 className="font-semibold text-gray-700 mb-1">No Tests Taken</h3>
+          <p className="text-sm">
+            Complete your first test to unlock AI-powered insights!
+          </p>
         </CardContent>
       </Card>
     );

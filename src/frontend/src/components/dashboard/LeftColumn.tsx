@@ -1,63 +1,89 @@
+import { useQuery } from "@tanstack/react-query";
 import { NextPeriodCard } from "./NextPeriodCard";
 import { VocabularyStats } from "./VocabularyStats";
 import { AIReviewCard } from "./AIReviewCard";
+import { apiClient } from "@/api/Client";
+import { useAuthStore } from "@/stores/AuthStore";
 import type {
-  NextPeriodDTO,
-  VocabularyStatsDTO,
-  AIReviewDTO,
+  ClassPeriodDTO,
+  VocabularyProgressDTO,
+  TestFeedbackDTO,
 } from "@/types/dashboard-dto";
 
-// MOCK DATA
-const mockNextPeriod: NextPeriodDTO = {
-  id: "class-123",
-  classroomName: "Advanced English 101",
-  periodNumber: 12,
-  lessonContent: "Complex Prepositions & Phrasal Verbs",
-  startTime: new Date(Date.now() + 1000 * 60 * 60 * 2.5),
-};
-
-const mockVocabStats: VocabularyStatsDTO = {
-  learnedWords: 342,
-  totalSavedWords: 500,
-  masteryDistribution: [
-    { level: "L1", words: 80 },
-    { level: "L2", words: 120 },
-    { level: "L3", words: 65 },
-    { level: "L4", words: 45 },
-    { level: "L5", words: 20 },
-    { level: "L6", words: 12 },
-  ],
-  nextReviewWordCount: 45,
-  nextReviewTime: new Date(Date.now() - 1000 * 60),
-};
-
-const mockAIReview: AIReviewDTO = {
-  testTitle: "Midterm Reading Comprehension",
-  strengths: [
-    "Excellent grasp of main ideas in complex academic texts.",
-    "Strong vocabulary deduction from context clues.",
-  ],
-  weaknesses: [
-    "Struggles with 'inference' questions regarding author tone.",
-    "Slow reading speed causing time management issues.",
-  ],
-  suggestions: [
-    "Practice skimming specifically for transition words (however, moreover).",
-    "Read 1 academic article daily under a strict 5-minute timer.",
-  ],
-};
-
 export function LeftColumn() {
+  const { user } = useAuthStore();
+
+  // Fetch Class Period (Pagination format: extract content[0])
+  const { data: nextPeriod, isLoading: isLoadingPeriod } = useQuery({
+    queryKey: ["nextPeriod", user?.userId],
+    queryFn: async () => {
+      const res = await apiClient.get<{ content: ClassPeriodDTO[] }>(
+        "/class-periods?size=1&sort=startAt,asc",
+      );
+
+      const period = res.data.content[0];
+      if (!period) return null;
+
+      return {
+        ...period,
+        startTime: new Date(period.startTime),
+      } as ClassPeriodDTO;
+    },
+    enabled: !!user,
+    staleTime: 1000 * 60 * 5, // Cache for 5 minutes
+  });
+
+  // Fetch Vocabulary Progress
+  const { data: vocabStats, isLoading: isLoadingVocab } = useQuery({
+    queryKey: ["vocabProgress", user?.userId],
+    queryFn: async () => {
+      const res = await apiClient.get<VocabularyProgressDTO>(
+        "/vocabulary/progress",
+      );
+
+      if (!res.data) return null;
+
+      return {
+        ...res.data,
+        nextReviewTime: new Date(res.data.nextReviewTime),
+      } as VocabularyProgressDTO;
+    },
+    enabled: !!user,
+    staleTime: 1000 * 60 * 5,
+  });
+
+  // Fetch Latest AI Review
+  const { data: aiReview, isLoading: isLoadingReview } = useQuery({
+    queryKey: ["aiReview", user?.userId],
+    queryFn: async () => {
+      const res = await apiClient.get<TestFeedbackDTO | "">(
+        "/test-attempts/latest-feedback",
+      );
+
+      if (!res.data || res.status === 204) return null;
+
+      return res.data as TestFeedbackDTO;
+    },
+    enabled: !!user,
+    staleTime: 1000 * 60 * 30, // Reviews don't change often, cache longer (30 mins)
+  });
+
   return (
-    <div className="flex flex-col gap-6 w-full">
-      {/* Next Period Hero Card */}
-      <NextPeriodCard period={mockNextPeriod} />
+    <div className="flex flex-col gap-6 w-full flex-1">
+      <NextPeriodCard
+        period={nextPeriod || undefined}
+        isLoading={isLoadingPeriod}
+      />
 
-      {/* Vocabulary Learning Stats */}
-      <VocabularyStats stats={mockVocabStats} />
+      <VocabularyStats
+        stats={vocabStats || undefined}
+        isLoading={isLoadingVocab}
+      />
 
-      {/* Last Test AI Reviews */}
-      <AIReviewCard review={mockAIReview} />
+      <AIReviewCard
+        review={aiReview || undefined}
+        isLoading={isLoadingReview}
+      />
     </div>
   );
 }
